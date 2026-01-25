@@ -1,11 +1,33 @@
-# Cycle–Local Rigidity for FO^4 on Bounded-Degree Graphs (k=4, Δ=4, r=2)
+# <REPO TITLE>
 
-This repository contains:
-- `paper.pdf` — manuscript
-- `certificate.json` — finite rigidity certificate
-- `certificate.sha256` — SHA-256 digest for verification
+## Purpose
+One-paragraph statement of what this repository contains and why it exists.
 
-## Verify the certificate hash
-```bash
-sha256sum certificate.json
-# should equal the contents of certificate.sha256
+## Scope
+- What this repo includes
+- What this repo does not include
+
+## Contents
+- docs/ — papers, notes, figures
+- src/ — source (LaTeX/Lean/scripts)
+- examples/ — minimal runnable examples
+
+## Quickstart
+
+### LaTeX
+latexmk -pdf -interaction=nonstopmode -halt-on-error <MAIN_TEX>.tex
+
+### Lean
+lake build
+
+## Reproducibility
+Describe certificates, hashes, or canonical artifacts.
+
+## Citation
+Add BibTeX or CITATION.cff.
+
+## Contributing
+Issues for bugs, PRs for changes.
+
+## License
+See LICENSE.
