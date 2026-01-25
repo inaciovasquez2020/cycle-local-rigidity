@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it using the following metadata."
+title: "Cycle–Local Rigidity"
+authors:
+  - family-names: "Vasquez"
+    given-names: "Inacio F."
+date-released: 2026-01-25
+version: "v1.0.0"
+doi: "10.0000/cycle-local-rigidity"  # placeholder DOI
+url: "https://github.com/inaciovasquez2020/cycle-local-rigidity"
