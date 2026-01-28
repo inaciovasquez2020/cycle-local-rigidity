@@ -31,3 +31,21 @@ This repository provides the formal computational witness for the **Logic-Width 
 To compile the structural proofs:
 ```bash
 latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+
+---
+```markdown
+## Research Status
+
+FO⁴ cycle-local rigidity is proved with finite certificates
+for bounded degree and radius parameters.
+
+## Citation
+
+```bibtex
+@manual{Vasquez_Cycle_Local_Rigidity_2026,
+  author       = {Vasquez, Inacio F.},
+  title        = {FO^4 Cycle-Local Rigidity with Finite Certificates},
+  institution  = {Independent Research Program},
+  year         = {2026},
+  url          = {https://github.com/inaciovasquez2020/cycle-local-rigidity}
+}
