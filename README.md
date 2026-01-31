@@ -1,51 +1,89 @@
-![CI](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/ci.yml/badge.svg)
-
-# Cycle Local Rigidity
-**Verification of Logic-Width Dependency in Periodic Systems**
+# Cycle Local Rigidity  
+**Verification of Logic–Width Dependency in Periodic Systems**
 
 ---
 
-### 🛡️ Institutional Verification
-* **Registry ID:** `CORE-LW-01`
-* **Status:** Core Mathematically Closed
-* **Verification Method:** Lean 4 Formal Proof / LaTeX Structural Analysis
-* **Framework Alignment:** Unified Rigidity Framework (URF) — Law 3
+## Scope
+
+This repository is a **Tier A module** in the **Scientific Infrastructure (URF)**.  
+It provides the **formal logic and proof layer** for the Logic–Width Dependency:
+
+\[
+k \ge f(tw)
+\]
+
+It constitutes the **cycle / periodic specialization** of the URF rigidity wall.
+
+This module contains:
+- Lean 4 formal proofs,
+- LaTeX structural manuscripts,
+- finite certificates of cycle-local rigidity,
+- deterministic witnesses of spectral isolation.
+
+No simulations, heuristics, or probabilistic models are used.
+
+---
+
+## Institutional Verification
+
+- **Registry ID:** CORE-LW-01  
+- **Status:** Core Mathematically Closed  
+- **Verification Method:** Lean 4 Formal Proof / LaTeX Structural Analysis  
+- **Framework Alignment:** Unified Rigidity Framework (URF) — Law 3  
 
 ---
 
 ## Purpose
-This repository provides the formal computational witness for the **Logic-Width Dependency** ($k \ge f(tw)$). It exists to prove that local homogeneity forces global rigidity in cyclic and periodic operator systems, specifically resolving the "Expander Obstruction" by isolating the spectral gap within bounded-treewidth regimes.
 
-## Scope
-- **Includes:** Lean 4 formalizations of cycle-local types, LaTeX manuscripts detailing the Rigidity Wall, and CI-verified proofs of spectral isolation.
-- **Does Not Include:** Heuristic simulations or probabilistic modeling; all results are deterministic and formally verified.
+This repository provides the **formal computational witness** for the  
+**Logic–Width Dependency** in periodic and cyclic systems.
 
-## Contents
-- `docs/` — Formal manuscripts, including the structural resolution of the Expander Obstruction.
-- `src/` — Source files including **Lean 4** formalizations and **LaTeX** source for citable artifacts.
-- `examples/` — Minimal runnable witnesses of the Spectral Gap in cycle-local regimes.
+It resolves the **Expander Obstruction** by proving:
 
-## Quickstart
+- local FOᵏ homogeneity,
+- plus bounded structural width,
+- forces global rigidity in cyclic regimes.
 
-### LaTeX
-To compile the structural proofs:
-```bash
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+This establishes the **logic–geometry bridge** required by URF.
 
 ---
-```markdown
-## Research Status
 
-FO⁴ cycle-local rigidity is proved with finite certificates
-for bounded degree and radius parameters.
+## Core Result
 
-## Citation
+### FO⁴ Cycle-Local Rigidity Theorem
 
-```bibtex
-@manual{Vasquez_Cycle_Local_Rigidity_2026,
-  author       = {Vasquez, Inacio F.},
-  title        = {FO^4 Cycle-Local Rigidity with Finite Certificates},
-  institution  = {Independent Research Program},
-  year         = {2026},
-  url          = {https://github.com/inaciovasquez2020/cycle-local-rigidity}
-}
+For bounded-degree periodic systems:
+
+\[
+\text{FO}^4\text{-local equivalence} \;\Rightarrow\; \text{global rigidity}
+\]
+
+with finite certificates depending only on radius and degree bounds.
+
+This result is:
+- deterministic,
+- formally verified,
+- independent of probabilistic arguments.
+
+---
+
+## Contents
+
+- `docs/` — Formal manuscripts resolving the Expander Obstruction.  
+- `src/` — Lean 4 formalizations and LaTeX source.  
+- `examples/` — Minimal witnesses of spectral isolation in cycle-local regimes.  
+
+All contents are versioned and citable.
+
+---
+
+## Reproducibility
+
+All verification is deterministic.
+
+### Lean
+
+To build formal proofs:
+
+```bash
+lake build
