@@ -2,6 +2,7 @@
 
 This repository contains the research implementation and analysis for Cycle-Local Rigidity within the Universal Reference Frame (URF) framework. It is an indexed component of the Vasquez research ecosystem.
 
+<<<<<<< HEAD
 ## Overview
 The `cycle-local-rigidity` module provides the computational logic and mathematical modeling for cyclic rigidity constraints and local stability as part of the broader URF research suite.
 
@@ -34,3 +35,6 @@ If you use this research or implementation in your work, please cite it as follo
 =======
 Status: manuscript repository (non-executable). Core theoretical module referenced by active submissions including Foundations of Science: "Thermodynamic Limits on Empirical Discovery in Finite Information Systems".
  (Update status to reflect active Foundations of Science submission)
+=======
+Status: manuscript repository (non-executable). Core theoretical module referenced by active submissions including Foundations of Science: "Thermodynamic Limits on Empirical Discovery in Finite Information Systems". Core theoretical module referenced by active submissions including Foundations of Science: "Thermodynamic Limits on Empirical Discovery in Finite Information Systems".
+>>>>>>> 3e9616c (Update status to reflect active Foundations of Science submission)
