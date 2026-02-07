@@ -1,3 +1,5 @@
+[![CI Status](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/WORKFLOW_FILE/badge.svg)](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/WORKFLOW_FILE)
+
 # cycle-local-rigidity
 
 This repository contains the research implementation and analysis for Cycle-Local Rigidity within the Universal Reference Frame (URF) framework. It is an indexed component of the Vasquez research ecosystem.
