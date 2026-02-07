@@ -16,6 +16,8 @@ jobs:
 
       - name: Set up Lean
         uses: leanprover/lean-action@v1
+        with:
+            toolchain: stable
 
       - name: Lake update
         run: lake update
