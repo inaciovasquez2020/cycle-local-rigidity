@@ -14,15 +14,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Set up Lean
+      - name: Set up Lean (elan)
         uses: leanprover/lean-action@v1
-        with:
-            toolchain: stable
+
+      - name: Configure Lean toolchain
+        run: elan default stable
 
       - name: Lake update
         run: lake update
 
       - name: Build
         run: lake build
-
 
