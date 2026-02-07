@@ -17,7 +17,7 @@ jobs:
       - name: Set up Lean
         uses: leanprover/lean-action@v1
         with:
-          auto-config: true
+              reinstall-transient-toolchain: true
 
       - name: Lake update
         run: lake update
