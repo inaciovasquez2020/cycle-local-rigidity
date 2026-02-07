@@ -1,4 +1,4 @@
-name: Lean Action CI
+name: Lean CI
 
 on:
   push:
@@ -14,10 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Set up Lean
-        uses: leanprover/lean-action@v1
-        with:
-              reinstall-transient-toolchain: true
+      - name: Install Elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Set Lean toolchain
+        run: elan default stable
 
       - name: Lake update
         run: lake update
