@@ -1,4 +1,4 @@
-[![CI Status](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/WORKFLOW_FILE/badge.svg)](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/WORKFLOW_FILE)
+[![Lean Action CI](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/lean_action_ci.yml/badge.svg)](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/lean_action_ci.yml)
 
 # cycle-local-rigidity
 
