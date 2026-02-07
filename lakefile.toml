@@ -1,0 +1,10 @@
+name = "cycle_local_rigidity"
+version = "0.1.0"
+defaultTargets = ["cycle_local_rigidity"]
+
+[[lean_lib]]
+name = "CycleLocalRigidity"
+
+[[lean_exe]]
+name = "cycle_local_rigidity"
+root = "Main"
