@@ -17,6 +17,9 @@ This repository is a registered module of the Vasquez Index. Stable references, 
 * **Infrastructure:** [scientific-infrastructure](https://github.com/inaciovasquez2020/scientific-infrastructure)
 
 ---
+## References
+- Rigidity framework: https://inaciovasquez2020.github.io
+- Project index: https://inaciovasquez2020.github.io/vasquez-index/
 
 ## Technical Notes
 * **Integration:** This module is designed to interface with `urf-core` and `terminal-rigidity-witness-erb` to maintain theoretical consistency across the ecosystem.
