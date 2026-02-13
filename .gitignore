@@ -1,1 +1,9 @@
-/.lake
+.venv/
+__pycache__/
+scripts/__pycache__/
+
+graphs/
+certificate.counterexample.json
+
+*.pyc
+*.log
