@@ -1,0 +1,45 @@
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\paragraph{Graphs.}
+All graphs are finite, undirected, simple. For a graph $G=(V,E)$ and $v\in V$, let
+$B_r(G,v)$ be the induced radius-$r$ ball about $v$.
+Let $\Delta(G)$ be the maximum degree.
+
+\paragraph{Cycle space (over $\F_2$).}
+Let $\F_2=\Z/2\Z$. The cycle space is
+\[
+Z_1(G;\F_2)=\ker(\partial:\F_2^{E}\to \F_2^{V}),
+\]
+with $\partial$ the incidence boundary map mod $2$.
+Let $\beta_1(G)=\dim_{\F_2}Z_1(G;\F_2)$.
+
+\paragraph{Radius-$r$ local cycle space.}
+For each $v\in V$, let $G_v=B_r(G,v)$ with inclusion $\iota_v:G_v\hookrightarrow G$.
+Define
+\[
+L_r(G)=\left\langle (\iota_v)_*(Z_1(G_v;\F_2)) : v\in V \right\rangle
+\subseteq Z_1(G;\F_2),
+\]
+and
+\[
+\beta^{\mathrm{loc}}_1(G;r)=\dim_{\F_2}L_r(G).
+\]
+
+\paragraph{FO$^4$ radius-$2$ homogeneity.}
+Let $\equiv^4_2$ denote FO$^4$ equivalence of rooted radius-$2$ neighborhoods.
+Say $G$ is FO$^4$ radius-$2$ homogeneous if $(G,u)\equiv^4_2(G,v)$ for all $u,v\in V$.
+
+\paragraph{CLR$(4,4,2)$.}
+A graph $G$ satisfies CLR$(4,4,2)$ if
+\[
+\Delta(G)\le 4,\quad G\ \text{is FO$^4$ radius-$2$ homogeneous},
+\]
+and there exists a constant $C=C(4,2)$ such that
+\[
+\beta^{\mathrm{loc}}_1(G;2)\le C.
+\]
+
+\paragraph{Theorem (Cycle--Local Rigidity, $(4,4,2)$).}
+For all finite graphs $G$, if $\Delta(G)\le 4$ and $G$ is FO$^4$ radius-$2$ homogeneous,
+then $G$ satisfies CLR$(4,4,2)$.
