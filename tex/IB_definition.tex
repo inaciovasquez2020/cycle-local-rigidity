@@ -1,0 +1,27 @@
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+
+\paragraph{Oriented edges and nonbacktracking matrix.}
+For a finite undirected simple graph $G=(V,E)$, let $\vec E$ be the set of oriented edges.
+Write $e=(u\to v)$ and $\bar e=(v\to u)$.
+Define the nonbacktracking matrix $B_G\in\{0,1\}^{\vec E\times \vec E}$ by
+\[
+(B_G)_{e,f}=1 \iff \text{$\mathrm{head}(e)=\mathrm{tail}(f)$ and $f\ne \bar e$.}
+\]
+
+\paragraph{Ihara--Bass determinant formula.}
+Let $A$ be the adjacency matrix of $G$ and $D$ the diagonal degree matrix.
+The Ihara zeta function satisfies
+\[
+\det(I - u B_G)=(1-u^2)^{|E|-|V|}\det\!\big(I-uA+u^2(D-I)\big).
+\]
+
+\paragraph{Certificate predicate IB$(G;\rho,\Lambda)$.}
+Fix parameters $\rho\in\R_{\ge 0}$ and $\Lambda\subseteq \R_{\ge 0}$.
+Define IB$(G;\rho,\Lambda)$ to mean:
+\[
+\mathrm{spr}(B_G)\le \rho
+\quad\text{and}\quad
+\mathrm{Spec}\big(I-uA+u^2(D-I)\big)\subseteq \Lambda
+\ \text{for all real }u\in[0,1].
+\]
