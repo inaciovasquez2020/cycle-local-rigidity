@@ -12,6 +12,8 @@ def nonbacktracking_matrix(G):
     for i, e in enumerate(edges):
         index[e] = i
     n = len(edges)
+    if n == 0:
+        return np.zeros((0, 0))
     B = np.zeros((n, n), dtype=int)
     for (u, v), i in index.items():
         for w in G.neighbors(v):
@@ -21,8 +23,10 @@ def nonbacktracking_matrix(G):
     return B
 
 def spectral_radius(B):
+    if B.size == 0:
+        return 0.0
     vals = np.linalg.eigvals(B)
-    return max(abs(vals))
+    return float(max(abs(vals)))
 
 def verify_ib(graph_path, cert_path):
     with open(cert_path) as f:

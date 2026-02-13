@@ -1,6 +1,6 @@
 import sys
+import json
 import networkx as nx
-import itertools
 
 def ball(G, v, r):
     nodes = {v}
@@ -30,12 +30,19 @@ def local_cycle_rank(G, r):
 
 def verify_clr(graph_path, cert_path):
     G = nx.read_edgelist(graph_path, nodetype=int)
+
+    if G.number_of_nodes() == 0 or G.number_of_edges() == 0:
+        return True
+
     if max(dict(G.degree()).values()) > 4:
         return False
+
     r = 2
     loc_rank = local_cycle_rank(G, r)
+
     with open(cert_path) as f:
-        cert = __import__("json").load(f)
+        cert = json.load(f)
+
     return loc_rank <= cert["clr"]["max_local_cycle_rank"]
 
 if __name__ == "__main__":
