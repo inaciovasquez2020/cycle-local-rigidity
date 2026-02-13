@@ -1,25 +1,19 @@
-Status: Bounded Verification Result
+Status (as of commit)
 
-We fix global parameters:
-- rho0 = 1
-- C0 = 1
+The implication
 
-Define the theorem domain:
+IB_{rho0} ⇒ CLR(4,4,2; rho0, C0)
+
+with parameters
+rho0 = 1
+C0 = 1
+
+has been exhaustively verified for all graphs with n ≤ 6
+under the assumptions:
 - maximum degree ≤ 4
-- IB_{rho0}
 - FO^4 radius-2 homogeneity
+- IB_{rho0}
 
-Result:
-- No strict counterexample to
-  IB_{rho0} ⇒ CLR(4,4,2; rho0, C0)
-  exists for any graph with n ≤ 7 vertices.
+No strict counterexample exists in this range.
 
-Method:
-- Exhaustive enumeration of graphs up to n = 7
-- IB and FO^4 radius-2 prefiltering
-- Deterministic verification via scripts/search_counterexample_strict.py
-
-Status:
-- Verified for n ≤ 7
-- n ≥ 8 is computationally infeasible without new pruning or theory
-- No contradiction found
+Larger n is computationally exponential and left open.
