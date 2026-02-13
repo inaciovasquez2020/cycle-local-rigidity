@@ -1,5 +1,2 @@
-numpy
-scipy
-matplotlib
-pandas
-scikit-learn
+networkx==3.2.1
+numpy==1.26.4
