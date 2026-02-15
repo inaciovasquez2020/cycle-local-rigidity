@@ -1,33 +1,63 @@
-Counterexamples Record
-This document records the outcome of an exhaustive counterexample search
-performed for the Cycle–Local Rigidity implication under bounded parameters.
-Verified Search Domain
-Graphs G satisfying all of the following:
-Number of vertices: n ≤ 7
-Maximum degree: Δ(G) ≤ 4
-FO^4 radius-2 homogeneity
-Ihara–Bass / nonbacktracking spectral condition IB_{ρ0} with ρ0 = 1
-Methodology
-All simple graphs within the vertex bound were enumerated exhaustively.
-Each candidate graph was subjected to the following deterministic filters:
-Degree constraint filter
-Ihara–Bass / nonbacktracking spectral verifier
-FO^4 radius-2 homogeneity checker
-Local F₂ cycle-rank evaluation within radius 2
-Graphs passing filters (1)–(3) were checked for violation of the
-cycle–local rigidity bound CLR(4,4,2; ρ0, C0) with C0 = 1.
-Result
-No counterexample was found within the verified domain.
-Interpretation
-This result establishes the non-existence of counterexamples
-within the explicitly bounded search space only.
-No claims are made for n ≥ 8 or for unbounded graph families.
-Artifacts
-The search and its outcome are certified by:
-certificate.json
-certificate.sha256
-verify.sh
-Reproducibility
-The verification is deterministic.
-All artifacts required to reproduce this result are included
-in release v0.1.0.
+# Counterexamples Record
+
+This document records the outcome of the exhaustive counterexample search
+performed as part of the Cycle–Local Rigidity bounded verification project.
+
+## 1. Definitions and Scope
+
+We examine simple, undirected graphs \(G\) satisfying all of the following:
+
+- **Vertex bound:** \(n \leq 7\)
+- **Max degree:** \(\Delta(G) \leq 4\)
+- **Homogeneity:** FO⁴ radius-2 homogeneity
+- **Spectral condition:** Ihara–Bass / nonbacktracking spectral condition with \(\rho_0 = 1\)
+
+No other graph classes or parameters are included in this search.
+
+## 2. Search Methodology
+
+The exhaustive search used the following deterministic process:
+
+1. **Enumerate all simple graphs** up to 7 vertices with \(\Delta(G) \leq 4\).
+2. **Apply spectral filter:** Evaluate Ihara–Bass / nonbacktracking condition.
+3. **Check homogeneity:** Test FO⁴ radius-2 homogeneity.
+4. **Local rank evaluation:** For graphs that pass (2) and (3), evaluate the
+   local \(\mathbb{F}_2\) cycle rank bound within radius 2.
+5. **Counterexample test:** A graph is labeled a counterexample if it violates
+   the verified cycle–local rigidity bound under the stated parameters.
+
+## 3. Outcome
+
+**No counterexample was found** within the verified domain.
+
+This means that for all graphs examined under steps (1)–(5), the cycle–local
+rigidity implication held.
+
+## 4. Interpretation and Limitations
+
+The absence of a counterexample in the bounded domain does **not** prove the
+implication for all graphs beyond \(n > 7\) or without the listed constraints.
+This record documents only a bounded exhaustive negative result.
+
+## 5. Artifacts
+
+The following artifacts support this counterexample search and its outcome:
+
+- `certificate.json`: Structured verification summary
+- `certificate.sha256`: Verification artifact hashes
+- `verify.sh`: Verification script
+- Enumeration and filter code (in repository)
+
+## 6. Reproducibility
+
+All artifacts and scripts required to reconstruct this search and its outcome
+are included in the repository and in release **v0.1.0**.
+The verification process is deterministic.
+
+## 7. References
+
+See also:
+
+- `counterexamples/README.md` (directory index)
+- Repository release v0.1.0 draft assets
+- MANUSCRIPT.md (bounded verification manuscript)
