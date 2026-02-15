@@ -1,7 +1,6 @@
 name = "cycle_local_rigidity"
 version = "0.1.0"
-defaultTargets = ["cycle_local_rigidity"]
-
+defaultTargets = ["CycleLocalRigidity"]
 [[lean_lib]]
 name = "CycleLocalRigidity"
 

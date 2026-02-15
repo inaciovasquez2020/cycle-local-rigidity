@@ -1,25 +1,34 @@
-Cycle–Local Rigidity (bounded verification)
+# Cycle–Local Rigidity (bounded verification)
 
-This repository contains a bounded, exhaustive verification of a cycle–local rigidity implication for finite graphs.
+Bounded, exhaustive verification of a cycle–local rigidity implication for finite graphs.
 
-Result.
-Fix parameters rho0 = 1 and C0 = 1. For all graphs G with at most 7 vertices satisfying:
-- maximum degree ≤ 4,
-- IB_{rho0} (nonbacktracking spectral radius ≤ rho0),
-- FO^4 radius-2 homogeneity,
+## Result (bounded)
+Fix parameters ρ₀ = 1 and C₀ = 1. For all graphs G with at most 7 vertices satisfying:
+- maximum degree Δ(G) ≤ 4
+- Ihara–Bass / nonbacktracking spectral condition IB_{ρ₀}
+- FO^4 radius-2 homogeneity
 
-no counterexample exists to the implication:
-IB_{rho0} ⇒ CLR(4,4,2; rho0, C0),
+no counterexample exists to:
+IB_{ρ₀} ⇒ CLR(4,4,2; ρ₀, C₀)
 
-where CLR(4,4,2) bounds the radius-2 local F2 cycle rank.
+## Method
+All graphs up to n ≤ 7 are exhaustively enumerated and filtered by:
+- nonbacktracking / Ihara–Bass spectral verifier
+- FO^4 radius-2 homogeneity checker
+- local F₂ cycle-rank checker
 
-Method.
-All graphs up to n ≤ 7 are exhaustively enumerated. The search is restricted to the theorem domain using:
-- a concrete Ihara–Bass / nonbacktracking spectral verifier,
-- an FO^4 radius-2 homogeneity checker,
-- a local cycle-rank checker.
+Verification is deterministic and enforced by CI.
 
-The verification is deterministic and enforced by CI.
+## Status / Scope
+- Verified: n ≤ 7 (bounded exhaustive)
+- Not claimed: any unbounded-n theorem
+- n ≥ 8: infeasible without additional structure
 
-Status.
-The result is fully verified for n ≤ 7. Enumeration for n ≥ 8 is computationally infeasible without additional theoretical pruning. No general (unbounded-n) claim is made.
+## Quickstart
+```bash
+./verify.sh
+Artifacts
+certificate.json
+certificate.sha256
+Citation
+See CITATION.cff.
