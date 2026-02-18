@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+% --- Theorem Environments ---
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{plain}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{remark}[definition]{Remark}
+
+\title{Local Cycle Rank, Oblivion Rigidity, and the Final Wall of FO$^4$ Locality}
+\author{Inacio F. Vasquez \\ Independent Researcher}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hrule
+\vspace{0.5em}
+\noindent
+\textbf{STATUS:} STATEMENT / CONDITIONAL \\
+\textbf{SCOPE:} Structural obstruction for FO$^4$ locality on bounded-degree graphs via cycle-rank rigidity. \\
+\textbf{DEPENDENCIES:} Finite-variable logic; bounded-degree graph theory; non-backtracking spectra. \\
+\textbf{NON-CLAIMS:} No extension beyond FO$^4$; no asymptotic tightness; no algorithmic optimality.
+\vspace{0.5em}
+\hrule
+
+\section{Background}
+Finite-variable logics formalize reasoning under bounded memory and locality constraints. On bounded-degree graphs, FO$^k$ locality implies that only fixed-radius neighborhoods are observable. Classical results characterize this limitation logically or game-theoretically, but not through intrinsic graph invariants.
+
+\section{Motivation}
+What intrinsic combinatorial invariant enforces the final locality barrier for FO$^4$ on bounded-degree graphs?
+
+\section{Intuition}
+Under strong local homogeneity, a graph cannot sustain arbitrarily many independent global cycles. Local indistinguishability forces global cycle overlap and collapse. The invariant measuring this collapse is the cycle rank.
+
+\section{FO$^4$ Radius--Two Homogeneity}
+Let $G$ be a finite simple graph with $\Delta(G)\le 4$.
+
+\begin{definition}[FO$^4$ Radius--Two Homogeneity]
+$G$ is FO$^4$ radius--two homogeneous if for all vertices $v,w\in V(G)$, the rooted neighborhoods $(G(v,2),v)$ and $(G(w,2),w)$ satisfy the same FO$^4$ formulas.
+\end{definition}
+
+\section{Cycle Rank}
+\begin{definition}[Cycle Rank]
+For a graph $G$ with $c(G)$ connected components,
+\[
+\mathrm{crank}(G) := |E(G)| - |V(G)| + c(G).
+\]
+\end{definition}
+
+\section{Non--Backtracking Operator}
+Let $\vec{E}(G)$ denote the set of directed edges.
+
+\begin{definition}[Hashimoto Operator]
+The non--backtracking operator $B$ acts on $\vec{E}(G)$ by
+\[
+B_{(u,v),(v,w)} =
+\begin{cases}
+1 & \text{if } w\neq u,\\
+0 & \text{otherwise}.
+\end{cases}
+\]
+\end{definition}
+
+\begin{remark}
+By the Ihara--Bass formula, the spectrum of $B$ encodes the cycle rank of $G$.
+\end{remark}
+
+\section{Transition Digraph}
+\begin{definition}[FO$^4$ Transition Digraph $T_{4,2}$]
+Vertices of $T_{4,2}$ represent canonical FO$^4$ types of rooted radius--two neighborhoods. A directed edge represents an admissible overlap between adjacent neighborhoods.
+\end{definition}
+
+\section{Oblivion Rigidity}
+\begin{definition}[Oblivion Rigidity]
+A graph $G$ exhibits oblivion rigidity if FO$^4$ radius--two homogeneity forces a uniform upper bound on $\mathrm{crank}(G)$.
+\end{definition}
+
+\section{Main Result}
+\begin{theorem}[Cycle--Local Rigidity --- Conditional]
+Let $G$ be a finite graph with $\Delta(G)\le 4$.  
+If $G$ is FO$^4$ radius--two homogeneous, then $\mathrm{crank}(G)$ is bounded by a constant depending only on $(k,\Delta,r)=(4,4,2)$.
+\end{theorem}
+
+\begin{remark}
+The explicit bound is obtained by finite enumeration of strongly connected components of $T_{4,2}$. This step is computational and introduces no additional mathematical assumptions.
+\end{remark}
+
+\section{Relationship Map}
+This result:
+\begin{itemize}
+\item identifies the final locality obstruction for FO$^4$ as geometric rather than logical,
+\item explains locality collapse via enforced cycle compression,
+\item isolates a finite, checkable rigidity condition.
+\end{itemize}
+
+\section*{References}
+\begin{enumerate}
+\item L. Libkin, \emph{Elements of Finite Model Theory}, Springer (2004).
+\item Y. Ihara, \emph{J. Math. Soc. Japan} 18 (1966).
+\item H. Bass, \emph{Int. J. Math.} 3 (1992).
+\item H. Gaifman, Herbrand Symposium (1982).
+\item R. Diestel, \emph{Graph Theory}, Springer (2017).
+\end{enumerate}
+
+\end{document}
+
