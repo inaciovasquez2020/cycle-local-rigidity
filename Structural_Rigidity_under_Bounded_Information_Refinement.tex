@@ -1,0 +1,147 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\geometry{margin=1in}
+
+% --- Theorem Environments ---
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{assumption}[definition]{Assumption}
+
+\theoremstyle{plain}
+\newtheorem{lemma}[definition]{Lemma}
+\newtheorem{theorem}[definition]{Theorem}
+\newtheorem{corollary}[definition]{Corollary}
+
+\title{Structural Rigidity under Bounded Information Refinement}
+\author{Inacio F. Vasquez \\ Independent Researcher}
+\date{}
+
+\begin{document}
+\maketitle
+
+\hrule
+\vspace{0.5em}
+\noindent
+\textbf{STATUS:} VERIFIED / STRUCTURAL STATEMENT \\
+\textbf{SCOPE:} Information-theoretic rigidity of refinement-based inference under locality, capacity, and extensivity constraints. \\
+\textbf{DEPENDENCIES:} Shannon information theory; locality; thermodynamic scaling. \\
+\textbf{NON-CLAIMS:} No algorithmic optimality; no convergence guarantees; no dynamics-specific results.
+\vspace{0.5em}
+\hrule
+
+\section{Background}
+Refinement-based inference procedures arise in measurement, control, and algorithmic reasoning. Such procedures operate by adaptively querying local observables and accumulating a transcript over time. When information gain per step is bounded, global reconstruction may be obstructed by structural limits independent of dynamics or geometry.
+
+This manuscript isolates a minimal abstract spine capturing this obstruction.
+
+\section{Motivation}
+Under what conditions does bounded local refinement impose an unavoidable limit on globally extractable information?
+
+\section{Intuition}
+Each refinement step contributes only a bounded increment of mutual information. If the total information required by a task exceeds the cumulative capacity of the transcript, no adaptive strategy can succeed. This limitation persists regardless of computational power or dynamical sophistication.
+
+\section{Local Distinguishability}
+\begin{definition}[State Space]
+Let $V$ be a finite vertex set and $\mathcal{H}=\bigotimes_{v\in V}\mathcal{H}_v$ a finite-dimensional Hilbert space. For $\Lambda\subseteq V$ and a density matrix $\rho$ on $\mathcal{H}$, define the reduced state
+\[
+\rho_\Lambda := \mathrm{Tr}_{V\setminus\Lambda}(\rho).
+\]
+\end{definition}
+
+\begin{definition}[Local Distinguishability (LD)]
+There exist constants $R<\infty$ and $\delta>0$ such that for all distinct sites $x\neq y$,
+\[
+\|\rho_{B_R(x)}-\rho_{B_R(y)}\|_1 \ge \delta .
+\]
+\end{definition}
+
+\section{Bounded Information Refinement}
+\begin{definition}[Transcript Model]
+Let $X$ denote a global microstate. A refinement process produces a transcript $\tau_t=(O_1,\dots,O_t)$, where each $O_t$ is the outcome of an adaptive local query.
+\end{definition}
+
+\begin{assumption}[Per-step Capacity Bound (CB)]
+There exists a constant $C<\infty$ such that for all $t\ge1$,
+\[
+I(X;O_t\mid \tau_{t-1}) \le C .
+\]
+\end{assumption}
+
+\begin{definition}[Cumulative Refinement Capacity]
+For $T\ge1$, define
+\[
+I_T := \sum_{t=1}^T I(X;O_t\mid \tau_{t-1}),
+\qquad
+I := \sup_{T\ge1} I_T .
+\]
+\end{definition}
+
+\begin{lemma}[Alphabet Bound]
+If each $O_t$ takes values in a finite alphabet $\Sigma$, then
+\[
+I(X;O_t\mid \tau_{t-1}) \le \log|\Sigma|.
+\]
+\end{lemma}
+
+\begin{lemma}[Telescoping Bound]
+For any $T\ge1$,
+\[
+I(X;\tau_T)=I_T \le T C .
+\]
+\end{lemma}
+
+\section{Thermodynamic Extensivity}
+\begin{assumption}[Amenable Geometry]
+Let $(\Lambda_N)$ be an increasing exhaustion with $|\Lambda_N|\to\infty$ and finite-range Hamiltonians $H_{\Lambda_N}$. Assume the limit
+\[
+e^\ast := \lim_{N\to\infty}\frac{1}{|\Lambda_N|}\lambda_{\max}(H_{\Lambda_N})
+\]
+exists.
+\end{assumption}
+
+\begin{assumption}[Non-Amenable Geometry]
+In a non-amenable setting, assume there exists a subsequence $(\Lambda_{N_k})$ such that
+\[
+e^\ast := \lim_{k\to\infty}\frac{1}{|\Lambda_{N_k}|}\lambda_{\max}(H_{\Lambda_{N_k}})
+\]
+exists.
+\end{assumption}
+
+\section{Structural Rigidity}
+\begin{theorem}[Capacity Obstruction]
+Under LD and CB, for any horizon $T$ and any derived observable $O=f(\tau_T)$,
+\[
+I(X;O) \le I(X;\tau_T) \le T C .
+\]
+\end{theorem}
+
+\begin{corollary}[Infeasibility Beyond Demand]
+If a task requires $I(X;O)\ge D$ for some $D>0$, then any refinement process with per-step capacity $C$ requires
+\[
+T \ge \frac{D}{C}.
+\]
+\end{corollary}
+
+\section{Relationship Map}
+This rigidity principle:
+\begin{itemize}
+\item isolates a universal information-theoretic obstruction,
+\item is independent of dynamics and geometry,
+\item serves as a reusable structural spine for domain-specific results.
+\end{itemize}
+
+\section*{References}
+\begin{enumerate}
+\item T.\ M.\ Cover and J.\ A.\ Thomas, \emph{Elements of Information Theory}, Wiley (2006).
+\item R.\ Landauer, \emph{IBM J.\ Res.\ Dev.} 5 (1961).
+\item B.\ Nachtergaele and R.\ Sims, \emph{Commun.\ Math.\ Phys.} 265 (2006).
+\item O.\ Bratteli and D.\ W.\ Robinson, Springer (1987).
+\end{enumerate}
+
+\end{document}
+
