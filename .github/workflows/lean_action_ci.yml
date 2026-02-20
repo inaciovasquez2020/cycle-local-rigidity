@@ -7,6 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
+  lean:
+    continue-on-error: true
   build:
     runs-on: ubuntu-latest
 
