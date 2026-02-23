@@ -1,3 +1,7 @@
+# Cycle Local Rigidity
+
+![CI](https://github.com/inaciovasquez2020/cycle-local-rigidity/actions/workflows/ci.yml/badge.svg)
+
 # Cycle–Local Rigidity (bounded verification)
 
 Bounded, exhaustive verification of a cycle–local rigidity implication for finite graphs.
