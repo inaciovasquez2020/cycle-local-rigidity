@@ -8,7 +8,7 @@ with parameters
 rho0 = 1
 C0 = 1
 
-has been exhaustively verified for all graphs with n ≤ 6
+has been exhaustively verified for all graphs with n ≤ 7
 under the assumptions:
 - maximum degree ≤ 4
 - FO^4 radius-2 homogeneity
