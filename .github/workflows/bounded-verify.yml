@@ -1,18 +1,21 @@
 name: Lean CI
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   lean:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Sanity check repository root
         run: |
@@ -30,4 +33,3 @@ jobs:
 
       - name: Build
         run: lake build
-
