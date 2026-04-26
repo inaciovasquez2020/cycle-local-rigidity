@@ -20,3 +20,4 @@ urf-*/
 overlap-rigidity-*/
 phase-transition-pnp*/
 yang-mills-hs-gap-cert/
+.pytest_cache/
